@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
-export const WeatherStyle = styled.div`
+interface Props {
+    background: string;
+  }
+  
+export const WeatherStyle = styled.div<Props>`
     padding: 30px;
     display: flex;
     height: 150px;
     max-width: 700px;
     width: 80vw;
-    background-color: #006eff;
+    background-color: ${(props)=>props.background?props.background:"#006eff"};
     justify-content: space-between;
     border-radius: 40px;
-    text-align:center;
 
     div:first-child{
         display: flex;
@@ -33,6 +36,7 @@ export const WeatherStyle = styled.div`
         height: 250px;
         flex-direction: column;
         align-items: center;
+        text-align: center;
 
         div:first-child, div:last-child{
         display: flex;

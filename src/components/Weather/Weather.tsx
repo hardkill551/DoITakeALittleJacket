@@ -1,19 +1,19 @@
 import "../../style/ErrorPageStyle";
 import { WeatherStyle } from "./WeatherStyle";
 
-export default function Weather() {
+export default function Weather({currentWeather, background}:any) {
   return (
-    <WeatherStyle>
+    <WeatherStyle background={background}>
       <div>
-        <h3>Agora: London</h3>
+        <h3>Agora: {currentWeather.name}</h3>
         <div>
-          <p>Mínima: 15.9°C</p>
-          <p>Máxima: 20.4°C</p>
+          <p>Mínima: {currentWeather.min}°C</p>
+          <p>Máxima: {currentWeather.max}°C</p>
         </div>
       </div>
       <div>
-        <p>Nublado</p>
-        <h2>18.2°C</h2>
+        <p>{currentWeather.weather}</p>
+        <h2>{currentWeather.temp}°C</h2>
       </div>
     </WeatherStyle>
   );
