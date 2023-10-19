@@ -3,7 +3,7 @@ import "../../style/ErrorPageStyle";
 import { FindCityStyle } from "./FindCityStyle";
 import axios from "axios";
 
-export default function FindCity() {
+export default function FindCity({setData}:any) {
     const [city, setCity] = useState<string>('');
   return (
     <FindCityStyle>
