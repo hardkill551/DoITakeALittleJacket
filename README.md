@@ -4,7 +4,7 @@ An easy-to-use weather application. Stay informed about the weather in any city 
 
 <img src="./src/assets/projectImage.png" />
 
-Try it out now at <a target="_blank">https://do-i-take-a-little-jacket.vercel.app</a>
+Try it out now at <a href="https://do-i-take-a-little-jacket.vercel.app" target="_blank" rel="noopener noreferrer">https://do-i-take-a-little-jacket.vercel.app</a>
 
 ## About
 
