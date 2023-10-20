@@ -5,6 +5,10 @@ export const FindCityStyle = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  p{
+    margin-top: 20px;
+    color: white;
+  }
   h1 {
     color: #006eff;
     font-weight: 700;

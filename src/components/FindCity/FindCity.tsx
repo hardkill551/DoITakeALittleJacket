@@ -11,10 +11,12 @@ export default function FindCity({
   setBackground,
 }: FindCityProps) {
   const [city, setCity] = useState<string>("");
+  const [hasCity, setHasCity] = useState<boolean>(true);
 
   return (
     <FindCityStyle>
       <h1>Levo um casaquinho?</h1>
+      
       <div>
         <input
           placeholder="Cidade"
@@ -22,11 +24,12 @@ export default function FindCity({
         ></input>
         <button onClick={() => findWeather(city)}>Buscar</button>
       </div>
+      {hasCity?<></>:<p>Não encontrei a cidade :(</p>}
     </FindCityStyle>
   );
 
   async function findWeather(city: string | null): Promise<void> {
-    if (!city) return;
+    if (!city) return setHasCity(false);
 
     const coordinatesRes = await axios.get(
       `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${
@@ -34,7 +37,8 @@ export default function FindCity({
       }&lang=pt_br`
     );
 
-    if (!coordinatesRes.data.length) return;
+    if (!coordinatesRes.data.length) return setHasCity(false);
+    setHasCity(true);
     const lon = coordinatesRes.data[0].lon;
     const lat = coordinatesRes.data[0].lat;
 
