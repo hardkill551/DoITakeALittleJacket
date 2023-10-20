@@ -3,7 +3,7 @@ import "../../style/ErrorPageStyle";
 import { FindCityStyle } from "./FindCityStyle";
 import axios from "axios";
 import { FindCityProps, ForecastItem } from "../../common/types";
-import { FormatStringDate, translateWeather } from "../../utils/findCityUtils";
+import { formatStringDate, translateWeather } from "../../utils/findCityUtils";
 
 export default function FindCity({
   setData,
@@ -12,7 +12,6 @@ export default function FindCity({
 }: FindCityProps) {
   const [city, setCity] = useState<string>("");
   const [hasCity, setHasCity] = useState<boolean>(true);
-
   return (
     <FindCityStyle>
       <h1>Levo um casaquinho?</h1>
@@ -74,7 +73,7 @@ export default function FindCity({
 
     const data = forecast.data.list.map((o: ForecastItem) => {
       const day = new Date(o.dt_txt);
-      const date = FormatStringDate(o.dt_txt.slice(5, 10));
+      const date = formatStringDate(o.dt_txt.slice(5, 10));
       return { temp: o.main.temp, day: date + ` (${weekday[day.getDay()]})` };
     });
 

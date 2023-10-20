@@ -13,7 +13,7 @@ export default function ErrorPage() {
 
     if (time === 0) {
       clearInterval(intervalId);
-      window.location.href = "/";
+      window.location.href = import.meta.env.VITE_APP_BASE_URL;
     }
 
     return () => {
