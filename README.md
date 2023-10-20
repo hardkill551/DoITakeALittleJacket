@@ -2,7 +2,7 @@
 
 An easy-to-use weather application. Stay informed about the weather in any city around the world, receive a 5-day weather forecast, and plan your trips knowing the weather conditions.
 
-<img src="/src/assets/projectImage.png" />
+<img src="./src/assets/projectImage.png" />
 
 Try it out now at do-i-take-a-little-jacket.vercel.app
 
