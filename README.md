@@ -44,4 +44,4 @@ npm run dev
 ```bash
 npm run build
 ```
-5. Finally access http://localhost:5174 on your favorite browser
+5. Finally access http://localhost:5173 on your favorite browser
