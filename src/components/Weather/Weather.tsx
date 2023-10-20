@@ -1,7 +1,8 @@
+import { WeatherProps } from "../../common/types";
 import "../../style/ErrorPageStyle";
 import { WeatherStyle } from "./WeatherStyle";
 
-export default function Weather({currentWeather, background}:any) {
+export default function Weather({ currentWeather, background }: WeatherProps) {
   return (
     <WeatherStyle background={background}>
       <div>
