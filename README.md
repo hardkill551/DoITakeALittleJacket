@@ -4,7 +4,7 @@ An easy-to-use weather application. Stay informed about the weather in any city 
 
 <img src="./src/assets/projectImage.png" />
 
-Try it out now at <a href="https://do-i-take-a-little-jacket.vercel.app" target="_blank" rel="noopener noreferrer">https://do-i-take-a-little-jacket.vercel.app</a>
+Try it out now at <a href="https://do-i-take-a-little-jacket.vercel.app" rel="noopener noreferrer">https://do-i-take-a-little-jacket.vercel.app</a>
 
 ## About
 
@@ -32,16 +32,16 @@ The following tools and frameworks were used in the construction of the project:
 ## How to run
 
 1. Clone this repository
-4. Install dependencies
+2. Install dependencies
 ```bash
 npm i
 ```
-5. Run the front-end with
+3. Run the front-end with
 ```bash
 npm run dev
 ```
-6. You can optionally build the project running
+4. You can optionally build the project running
 ```bash
 npm run build
 ```
-7. Finally access http://localhost:5174 on your favorite browser
+5. Finally access http://localhost:5174 on your favorite browser
