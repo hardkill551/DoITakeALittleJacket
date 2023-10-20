@@ -3,7 +3,11 @@ import "../../style/ErrorPageStyle";
 import { FindCityStyle } from "./FindCityStyle";
 import axios from "axios";
 
-export default function FindCity({ setData, setCurrentWeather, setBackground }: any) {
+export default function FindCity({
+  setData,
+  setCurrentWeather,
+  setBackground,
+}: any) {
   const [city, setCity] = useState<string>("");
 
   return (
@@ -29,16 +33,18 @@ export default function FindCity({ setData, setCurrentWeather, setBackground }: 
     );
 
     if (!coordinatesRes.data.length) return;
+    const lon = coordinatesRes.data[0].lon;
+    const lat = coordinatesRes.data[0].lat;
 
     const res = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${
-        coordinatesRes.data[0].lat
-      }&lon=${coordinatesRes.data[0].lon}&units=metric&appid=${
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${
         import.meta.env.VITE_APP_API_KEY
       }`
     );
 
     const weather = translateCities(res.data.weather[0].main);
+
+    findForecast(lat, lon);
 
     setCurrentWeather({
       weather: weather,
@@ -48,9 +54,30 @@ export default function FindCity({ setData, setCurrentWeather, setBackground }: 
       temp: res.data.main.temp,
     });
   }
+  async function findForecast(lat: string, lon: string) {
+    const res = await axios.get(
+      `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&units=metric&lon=${lon}&appid=${
+        import.meta.env.VITE_APP_API_KEY
+      }`
+    );
+    const weekday = ["dom", "seg", "ter", "qua", "qui", "sex", "sab"];
+    const array = res.data.list.map((o: any) => {
+      const day = new Date(o.dt_txt);
+      const date = FormataStringData(o.dt_txt.substr(5, 5));
+      return { temp: o.main.temp, day: date + ` (${weekday[day.getDay()]})` };
+    });
+
+    setData(array);
+  }
+
+  function FormataStringData(date: string) {
+    var dia = date.split("-")[0];
+    var mes = date.split("-")[1];
+
+    return ("0" + mes).slice(-2) + "/" + ("0" + dia).slice(-2);
+  }
 
   function translateCities(res: string) {
-    console.log(res);
     if (res === "Rain") {
       setBackground("#013a85");
       return "Chovendo";

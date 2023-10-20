@@ -1,4 +1,4 @@
 export type Data = {
-    name: string,
-    Celsius: number
+    day: string,
+    temp: number
 }

@@ -10,13 +10,13 @@ export default function Home() {
     const [currentWeather, setCurrentWeather] = useState<any>({name: 'London', max: "20.4", min: "15.9", temp:"18.2", weather:"Nublado"})
     const [background, setBackground] = useState<string>("");
     const [data, setData] = useState<Data[]>([
-        {name: 'Page A', Celsius: 16},
-        {name: 'Page B', Celsius: 18},
-        {name: 'Page C', Celsius: 20},
-        {name: 'Page D', Celsius: 15},
-        {name: 'Page E', Celsius: 13},
-        {name: 'Page F', Celsius: 30},
-        {name: 'Page G', Celsius: 15}
+        {day: 'Page A', temp: 16},
+        {day: 'Page A', temp: 16},
+        {day: 'Page A', temp: 16},
+        {day: 'Page A', temp: 16},
+        {day: 'Page A', temp: 16},
+        {day: 'Page A', temp: 16},
+        {day: 'Page A', temp: 16}
     ])
 
     return (
