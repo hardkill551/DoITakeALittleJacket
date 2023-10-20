@@ -1,27 +1,47 @@
-# React + TypeScript + Vite
+# Levo um casaquinho?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An easy-to-use weather application. Stay informed about the weather in any city around the world, receive a 5-day weather forecast, and plan your trips knowing the weather conditions.
 
-Currently, two official plugins are available:
+<img src="/assets/projectImage.png" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Try it out now at do-i-take-a-little-jacket.vercel.app
 
-## Expanding the ESLint configuration
+## About
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This is a web application that allows users to check the weather in any city around the world. Here are the implemented features:
 
-- Configure the top-level `parserOptions` property like this:
+- Search and display the current weather for a specific location.
+- Show a 5-day weather forecast.
+- Visualize weather conditions, such as rain, snow, clear skies, and more.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+With this app, users can plan their activities and trips while staying informed about the weather conditions in their desired locations.
+
+## Technologies
+The following tools and frameworks were used in the construction of the project:<br>
+<p>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/styled-components%20-%2320232a.svg?&style=for-the-badge&color=b8679e&logo=styled-components&logoColor=%3a3a3a'>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/axios%20-%2320232a.svg?&style=for-the-badge&color=informational'>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/react-app%20-%2320232a.svg?&style=for-the-badge&color=60ddf9&logo=react&logoColor=%2361DAFB"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/react_route%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/react-icons%20-%2320232a.svg?&style=for-the-badge&color=f28dc7&logo=react-icons&logoColor=%2361DAFB'>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/react-input%20mask%20-%2320232a.svg?&style=for-the-badge&logo=react"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/react-text%20mask%20-%2320232a.svg?&style=for-the-badge&logo=react"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/text-mask%20addons%20-%2320232a.svg?&style=for-the-badge&logo=text-mask"/>
+</p>
+
+## How to run
+
+1. Clone this repository
+4. Install dependencies
+```bash
+npm i
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+5. Run the front-end with
+```bash
+npm run dev
+```
+6. You can optionally build the project running
+```bash
+npm run build
+```
+7. Finally access http://localhost:5174 on your favorite browser
