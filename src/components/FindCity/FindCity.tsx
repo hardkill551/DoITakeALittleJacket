@@ -31,7 +31,7 @@ export default function FindCity({
     if (!city) return setHasCity(false);
 
     const coordinatesRes = await axios.get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${
         import.meta.env.VITE_APP_API_KEY
       }&lang=pt_br`
     );
@@ -64,7 +64,7 @@ export default function FindCity({
   }
   async function findForecast(lat: string, lon: string) {
     const forecast = await axios.get(
-      `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&units=metric&lon=${lon}&appid=${
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&units=metric&lon=${lon}&appid=${
         import.meta.env.VITE_APP_API_KEY
       }`
     );
