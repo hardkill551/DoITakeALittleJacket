@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/*" element={<ErrorPage />} />
+        <Route path="/12" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );
